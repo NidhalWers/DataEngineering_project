@@ -5,8 +5,10 @@ a stream linked to a database.
 to avoid having false data at a given moment, when we have access to the data we must be sure that these data are up to date and consistent 
 following the update of the citizen's status.
 
-3) The quantity of coming data is realy important and it's leading to increase. To realise this project we need an entire data department with data 
+3) The quantity of coming data is really important and it's leading to increase. To realise this project we need an entire data department with data
 engineer, data scientist... Only data scientist cannot be able to came true this project because some of abilities needed are not within the purview
 of the data scientist.  
 
-4)
+4) Peaceland has forgotten the information that indicates whether the report contains an alert or not,
+since only 1% of the reports contain an alert,
+the peacemakers will be able to consult only the interesting reports, containing an alert
