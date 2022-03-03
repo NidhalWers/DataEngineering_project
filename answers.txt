@@ -1,0 +1,8 @@
+1) For the storage process, we need something fast to write and something able to received lot of data at the same time. To do that we need
+a stream linked to a database.
+
+3) The quantity of coming data is realy important and it's leading to increase. To realise this project we need an entire data department with data 
+engineer, data scientist... Only data scientist cannot be able to came true this project because some of abilities needed are not within the purview
+of the data scientist.  
+
+4)
