@@ -1,6 +1,0 @@
-What business constraint should the architecture meet to fulfill 
-the requirement escribe in the paragraph «Alert»? Which component to choose?
-
-L'architecture ne doit pas être accessible au moment de la modification ( passage d'un citoyen dans un camp )
-pour ne pas avoir des fausses données à un moment donné, quand on a acces aux données on doit etre sur que ces données sont à jour et cohérente 
-suite à la mise à jour de l'état du citoyen.
