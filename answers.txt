@@ -5,9 +5,9 @@ a stream linked to a database.
 to avoid having false data at a given moment, when we have access to the data we must be sure that these data are up to date and consistent 
 following the update of the citizen's status.
 
-drones : porducteurs
-archivage : producteurs
-alerte : producteurs
+drones : producteurs
+archivage / alerte : consumer
+stockage : consumer
 
 
 3) The quantity of coming data is really important and it's leading to increase. To realise this project we need an entire data department with data
