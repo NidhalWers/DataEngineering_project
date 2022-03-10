@@ -1,4 +1,4 @@
-Drone1,up,down,left,right,down
-Drone2,down,up,up,left,left
-Drone3,right,right,left,up,down
-Drone4,left,up,right,right,up
+up,down,left,right,down
+down,up,up,left,left
+right,right,left,up,down
+left,up,right,right,up
