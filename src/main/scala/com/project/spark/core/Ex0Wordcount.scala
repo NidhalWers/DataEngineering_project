@@ -1,4 +1,4 @@
-package com.tp.spark.core
+package com.project.spark.core
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
