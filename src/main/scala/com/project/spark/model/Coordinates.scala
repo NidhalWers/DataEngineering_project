@@ -1,10 +1,6 @@
 package com.project.spark.model
 
 case class Coordinates(
-                      x : Double,
-                      y : Double
+                      lon : Int,
+                      lat : Int
                       )
-
-object Coordinates{
-  def apply(x: Double, y: Double): Coordinates = new Coordinates(x, y)
-}

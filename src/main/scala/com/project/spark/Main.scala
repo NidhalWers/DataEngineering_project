@@ -9,7 +9,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
-    val messages = messageService.convertJsonFileToMessages("").toList
+    // val messages =
     //todo utiliser un RDD
 
     println("Peaceland Project")

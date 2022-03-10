@@ -1,11 +1,9 @@
 package com.project.spark.service
 
-import com.project.spark.model.Message
+import com.project.spark.model.{Citizen, Message}
 
 class MessageService {
 
-  def convertJsonFileToMessages(file : String): Iterator[Message] = {
-    null
-  } 
+  def generateMessages(citizens : List[Citizen], ) :
 
 }
