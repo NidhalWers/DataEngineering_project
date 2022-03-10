@@ -2,15 +2,5 @@ package com.project.spark.model
 
 case class Citizen(
                   name : String,
-                  peaceScore : Int,
+                  peaceScore : PeaceScore,
                   )
-
-/*
-object Citizen{
-  def apply(body : String): Citizen = {
-    new Citizen(
-      null,
-      null
-    )
-  }
-}*/

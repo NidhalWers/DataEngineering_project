@@ -5,13 +5,3 @@ case class Message(
                   citizens : List[Citizen],
                   wordsHeard : List[String]
                   )
-
-object Message{
-  def apply(body : String): Message = {
-    new Message(
-      null,
-      null,
-      null
-    )
-  }
-}
