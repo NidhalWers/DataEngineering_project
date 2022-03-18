@@ -2,6 +2,7 @@ package com.project.spark
 
 import com.project.spark.infrastructure.{CitizenDataset, PeaceWatcherDataset}
 import com.project.spark.service.MessageService
+import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Main {
@@ -13,12 +14,12 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("Peaceland Project")
+    val spark = SparkSession.builder().appName("Peaceland Project")
+      .master("local[*]")
+      .getOrCreate()
+    val sc = spark.sparkContext
 
-    val conf = new SparkConf ()
-      .setAppName ("Peaceland Project")
-      .setMaster ("local[*]")
-
-    val sc = SparkContext.getOrCreate(conf)
+    // val sc = SparkContext.getOrCreate(conf)
 
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
 
@@ -29,7 +30,7 @@ object Main {
     }
 
     def makeAction(acc:Int):Unit = acc match{
-      case 0 => "End actions"
+      case 0 => print("End actions")
       case _ => action(acc)
         makeAction(acc-1)
         Thread.sleep(30000)
