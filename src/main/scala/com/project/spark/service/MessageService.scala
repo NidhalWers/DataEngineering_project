@@ -1,6 +1,6 @@
 package com.project.spark.service
 
-import com.project.spark.model.{Citizen, Report, PeaceWatcher}
+import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
 import org.apache.spark.rdd.RDD
 
 class MessageService {
@@ -10,12 +10,17 @@ class MessageService {
     .flatMap( l => l.split(" ", -1))
     .toList
 
-  def generateMessage(citizens : List[Citizen], peaceWatchers: PeaceWatcher) : Report = {
+  def generateMessage(citizens : List[Citizen], peaceWatchers: PeaceWatcher) : List[Message] = {
     val nCitizen = scala.util.Random.nextInt(4)
     val citizenForMessage = scala.util.Random.shuffle(citizens).take(nCitizen)
-    val nWords = scala.util.Random.nextInt(10)
-    val wordsForMessage = scala.util.Random.shuffle(wordsDataset).take(nWords)
-    new Report(peaceWatchers, citizenForMessage, wordsForMessage)
+    if( citizenForMessage.filter(c => c.peaceScore.isBad()).size > 0){
+      citizenForMessage.filter(c => c.peaceScore.isBad())
+        .map( c => new Alert(peaceWatchers, c) )
+    }else {
+      val nWords = scala.util.Random.nextInt(10)
+      val wordsForMessage = scala.util.Random.shuffle(wordsDataset).take(nWords)
+      List(new Report(peaceWatchers, citizenForMessage, wordsForMessage))
+    }
   }
 
 }
