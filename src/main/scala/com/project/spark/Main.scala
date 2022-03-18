@@ -22,15 +22,15 @@ object Main {
 
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
 
-    def action(moveIndex:Int)={
-      peaceWatchers.map(pw => pw.move(moveIndex))
+    def action()={
+      peaceWatchers.map(pw => pw.move(0))
         .map(pw => (pw, messageService.generateMessage(citizenDataset.citizensList, pw)))
         .map((tuple) => (tuple._1, println(tuple._2.toString) ))
     }
 
     def makeAction(acc:Int):Unit = acc match{
       case 0 => "End actions"
-      case _ => action(acc)
+      case _ => action()
         makeAction(acc-1)
         Thread.sleep(30000)
     }
