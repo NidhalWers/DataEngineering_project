@@ -9,8 +9,8 @@ class PeaceWatcherDataset {
 
 
 
-  val movementFilePath = "resources/DroneMovement"
-  val movement = scala.io.Source.fromFile(movementFilePath, "utf-8").getLines().map( l => l.split(",")).toList
+  private val movementFilePath = "resources/DroneMovement"
+  private val movement = scala.io.Source.fromFile(movementFilePath, "utf-8").getLines().map( l => l.split(",")).toList
 
   private val random = new Random()
 
