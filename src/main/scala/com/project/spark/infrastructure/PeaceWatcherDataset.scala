@@ -22,12 +22,5 @@ class PeaceWatcherDataset {
 
   private val pw3 = PeaceWatcher(3, Coordinates(random.nextInt(20), random.nextInt(20)), movement(3).toList)
 
-
-  private val conf = new SparkConf ()
-    .setAppName ("Inverted index")
-    .setMaster ("local[*]")
-
-  private val sc = SparkContext.getOrCreate(conf)
-
   val peaceWatchersList = List[PeaceWatcher](pw0, pw1, pw2, pw3)
 }

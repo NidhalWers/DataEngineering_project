@@ -4,7 +4,7 @@ case class PeaceScore(
                      value : Int
                      ){
   def isBad() : Boolean = {
-    value <= 4
+    value <= 35
   }
 }
 
