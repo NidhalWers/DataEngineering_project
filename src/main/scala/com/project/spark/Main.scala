@@ -3,6 +3,7 @@ package com.project.spark
 import com.project.spark.infrastructure.{CitizenDataset, PeaceWatcherDataset}
 import com.project.spark.service.MessageService
 import org.apache.spark.sql.SparkSession
+import com.project.spark.model.{Message,PeaceWatcher}
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Main {
@@ -23,21 +24,24 @@ object Main {
 
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
 
-    def action(moveIndex : Int)={
+    def action(moveIndex : Int):List [(PeaceWatcher,Message)]={
       peaceWatchers.map(pw => pw.move(moveIndex))
         .map(pw => (pw, messageService.generateMessage(citizenDataset.citizensList, pw)))
-        .map((tuple) => (tuple._1, println(tuple._2.toString) ))
+        .collect.toList
+        //.map((tuple) => (tuple._1, println(tuple._2.toString) ))
     }
 
     def makeAction(acc:Int):Unit = acc match{
-      case 0 => print("End actions")
-      case _ => action(acc)
+      case 0 => println("End actions")
+      case _ => val actionDid = action(acc)
+        actionDid.foreach(x => x._2.toString()+ " ///")
+        Thread.sleep(3000)
         makeAction(acc-1)
-        Thread.sleep(30000)
     }
+
     makeAction(3)
 
-
-
+    println("End program")
+    sc.stop()
   }
 }
