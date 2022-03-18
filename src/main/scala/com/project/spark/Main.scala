@@ -25,9 +25,8 @@ object Main {
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
 
     def action(moveIndex : Int):List [(PeaceWatcher,Message)]={
-      peaceWatchers.map(pw => pw.move(moveIndex))
+      peaceWatcherDataset.peaceWatchersList.map(pw => pw.move(moveIndex))
         .map(pw => (pw, messageService.generateMessage(citizenDataset.citizensList, pw)))
-        .collect.toList
         //.map((tuple) => (tuple._1, println(tuple._2.toString) ))
     }
 
