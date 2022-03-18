@@ -34,7 +34,7 @@ object Main {
     def makeAction(acc:Int):Unit = acc match{
       case 0 => println("End actions")
       case _ => val actionDid = action(acc)
-        actionDid.foreach(x => x._2.toString()+ " ///")
+        actionDid.foreach(x => println(x._2.toString())+ " ///")
         Thread.sleep(3000)
         makeAction(acc-1)
     }

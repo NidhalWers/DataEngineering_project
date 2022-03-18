@@ -8,7 +8,8 @@ case class Message(
 
   override def toString():String = {
     " peaceWatcher : "+peaceWatcher.id.toString+"\n" +
-      "citizen : "+citizens.map(c => c.name)+"\n " +
+      "citizen : "+citizens.map(c => c.name + " : score =" + c.peaceScore.value)+"\n " +
       "words heard : "+wordsHeard
+
   }
 }
