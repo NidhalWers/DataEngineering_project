@@ -21,11 +21,8 @@ object Main {
     val sc = SparkContext.getOrCreate(conf)
 
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
-    peaceWatchers.map(pw => pw.move("up"))
+    peaceWatchers.map(pw => pw.move(0))
       .map(pw => (pw, messageService.generateMessage(citizenDataset.citizensList, pw)))
       .map((tuple) => (tuple._1, println(tuple._2.toString) ))
-    //val movementFilePath = ""
-
-    //val movement = sc.textFile(movementFilePath).map( l => l.split(","))
   }
 }
