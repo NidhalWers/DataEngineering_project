@@ -9,9 +9,10 @@ class Report(
               ) extends Message {
 
   override def toString(): String = {
-    " peaceWatcher : " + peaceWatcher.id.toString + "\n" +
-      "citizen : " + citizens.map(c => c.name + " : score =" + c.peaceScore.value) + "\n " +
-      "words heard : " + wordsHeard
+    "peaceWatcher : " + peaceWatcher.id.toString + "\n" +
+    "location : " + peaceWatcher.location.toString + "\n"+
+    "citizen : " + citizens.map(c => c.name + " : score =" + c.peaceScore.value) + "\n " +
+    "words heard : " + wordsHeard
 
   }
 
@@ -22,7 +23,8 @@ class Alert (
             ) extends Message {
   override def toString: String = {
     "\t\t Alert ! Alert ! \n"+
-    " peaceWatcher : " + peaceWatcher.id.toString + "\n" +
+    "peaceWatcher : " + peaceWatcher.id.toString + "\n" +
+    "location : " + peaceWatcher.location.toString + "\n"+
     " citizen " + citizen.name + " : score = " + citizen.peaceScore.value
   }
 }
