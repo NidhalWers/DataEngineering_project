@@ -1,0 +1,4 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mEx1UserMiningSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should count the number of couple (user, tweets)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- tweetByUserNumber should count the number of tweets by user[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should return the top ten twitterers[0m[0m

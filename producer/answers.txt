@@ -1,0 +1,28 @@
+1) For the storage process, we need something fast to write and something able to received lot of data at the same time. To do that we need
+a stream linked to a database.
+
+2)The architecture must not be accessible at the time of the modification (passage of a citizen in a camp)
+to avoid having false data at a given moment, when we have access to the data we must be sure that these data are up to date and consistent 
+following the update of the citizen's status.
+
+drones : producteurs
+archivage / alerte : consumer
+stockage : consumer
+
+
+3) The quantity of coming data is really important and it's leading to increase. To realise this project we need an entire data department with data
+engineer, data scientist... Only data scientist cannot be able to came true this project because some of abilities needed are not within the purview
+of the data scientist.  
+
+4) Peaceland has forgotten the information that indicates whether the report contains an alert or not,
+since only 1% of the reports contain an alert,
+the peacemakers will be able to consult only the interesting reports, containing an alert
+
+l'heure des drones
+la batterie des drones
+
+
+
+
+{ à faire case class pour message }
+{ à faire simulation comportement d'un drone }
