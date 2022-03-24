@@ -16,15 +16,7 @@ object Main {
 
 
   def main(args: Array[String]): Unit = {
-    println("Peaceland Project")
-    val spark = SparkSession.builder().appName("Peaceland Project")
-      .master("local[*]")
-      .getOrCreate()
-    val sc = spark.sparkContext
-
-    // val sc = SparkContext.getOrCreate(conf)
-
-    val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
+    println("Peaceland Project - Producer")
 
     def action(moveIndex : Int):List [(PeaceWatcher,Message)]={
       peaceWatcherDataset.peaceWatchersList.map(pw => pw.move(moveIndex))
