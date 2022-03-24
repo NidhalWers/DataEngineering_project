@@ -1,6 +1,6 @@
 package com.project.spark
 
-import com.project.spark.infrastructure.{CitizenDataset, JsonHandler, PeaceWatcherDataset}
+import com.project.spark.infrastructure.{CitizenDataset, PeaceWatcherDataset}
 import com.project.spark.service.{MessageService, ProducerService}
 import org.apache.spark.sql.SparkSession
 import com.project.spark.model.{Message, PeaceWatcher, Report}
@@ -12,7 +12,6 @@ object Main {
   val messageService = new MessageService
   val peaceWatcherDataset = new PeaceWatcherDataset
   val citizenDataset = new CitizenDataset
-  val jsonHandler = new JsonHandler
   val producerService =  new ProducerService
 
 
@@ -37,7 +36,7 @@ object Main {
       case 0 => println("End actions")
       case _ => action(acc)
         //.foreach(x => x._2.toString()+ "\n")
-        .map(x => (x._1.id, jsonHandler.messageTojson(x._2)))
+        .map(x => (x._1.id, messageService.parseToJson(x._2)))
         .foreach( x => producerService.sendMessage(x._1.toString, x._2) )
         Thread.sleep(3000)
         makeAction(acc-1)
@@ -45,6 +44,7 @@ object Main {
 
     makeAction(3)
 
+    producerService.closeProducer()
     println("End program")
     sc.stop()
   }

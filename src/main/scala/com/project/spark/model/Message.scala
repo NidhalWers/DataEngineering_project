@@ -1,5 +1,6 @@
 package com.project.spark.model
 import java.time.LocalDateTime
+import com.google.gson._
 
 sealed class Message
 

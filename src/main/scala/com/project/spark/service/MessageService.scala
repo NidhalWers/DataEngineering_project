@@ -2,8 +2,9 @@ package com.project.spark.service
 
 import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
 import org.apache.spark.rdd.RDD
-
 import java.time.LocalDateTime
+
+import com.google.gson.Gson
 
 class MessageService {
 
@@ -24,6 +25,16 @@ class MessageService {
     val wordsForMessage = scala.util.Random.shuffle(wordsDataset).take(nWords)
 
     new Report(peaceWatchers, citizenForMessage, wordsForMessage, dateTimeNow())
+  }
+
+  def parseFromJson(line:String):Message = {
+    val gson = new Gson
+    gson.fromJson(line, classOf[Message])
+  }
+
+  def parseToJson(line:Message):String = {
+    val gson = new Gson
+    gson.toJson(line)
   }
 
   /*
