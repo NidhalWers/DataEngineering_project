@@ -1,7 +1,7 @@
 package com.project.spark
 
-import com.project.spark.infrastructure.{CitizenDataset, PeaceWatcherDataset}
-import com.project.spark.service.MessageService
+import com.project.spark.infrastructure.{CitizenDataset, JsonHandler, PeaceWatcherDataset}
+import com.project.spark.service.{MessageService, ProducerService}
 import org.apache.spark.sql.SparkSession
 import com.project.spark.model.{Message, PeaceWatcher, Report}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -12,6 +12,9 @@ object Main {
   val messageService = new MessageService
   val peaceWatcherDataset = new PeaceWatcherDataset
   val citizenDataset = new CitizenDataset
+  val jsonHandler = new JsonHandler
+  val producerService =  new ProducerService
+
 
   def main(args: Array[String]): Unit = {
     println("Peaceland Project")
@@ -24,7 +27,7 @@ object Main {
 
     val peaceWatchers = sc.parallelize(peaceWatcherDataset.peaceWatchersList)
 
-    def action(moveIndex : Int):List [(PeaceWatcher,List[Message])]={
+    def action(moveIndex : Int):List [(PeaceWatcher,Message)]={
       peaceWatcherDataset.peaceWatchersList.map(pw => pw.move(moveIndex))
         .map(pw => (pw, messageService.generateMessage(citizenDataset.getCitizenList(), pw)))
         //.map((tuple) => (tuple._1, println(tuple._2.toString) ))
@@ -32,8 +35,10 @@ object Main {
 
     def makeAction(acc:Int):Unit = acc match{
       case 0 => println("End actions")
-      case _ => val actionDid = action(acc)
-        actionDid.foreach(x => (x._2.foreach(y => println(y.toString()+ "\n\n")) , println("\n---------------\n") ))
+      case _ => action(acc)
+        //.foreach(x => x._2.toString()+ "\n")
+        .map(x => (x._1.id, jsonHandler.messageTojson(x._2)))
+        .foreach( x => producerService.sendMessage(x._1.toString, x._2) )
         Thread.sleep(3000)
         makeAction(acc-1)
     }

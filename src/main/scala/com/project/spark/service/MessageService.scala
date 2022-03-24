@@ -16,17 +16,24 @@ class MessageService {
     LocalDateTime.now().toString.replace("T","_").replace("-","").replace(":","")
   }
 
-  def generateMessage(citizens : List[Citizen], peaceWatchers: PeaceWatcher) : List[Message] = {
+  def generateMessage(citizens : List[Citizen], peaceWatchers: PeaceWatcher) : Message = {
     val nCitizen = scala.util.Random.nextInt(4)
     val citizenForMessage = scala.util.Random.shuffle(citizens).take(nCitizen)
+
+    val nWords = scala.util.Random.nextInt(10)
+    val wordsForMessage = scala.util.Random.shuffle(wordsDataset).take(nWords)
+
+    new Report(peaceWatchers, citizenForMessage, wordsForMessage, dateTimeNow())
+  }
+
+  /*
+  def consumeMessage(): Unit ={
+
     if( citizenForMessage.filter(c => c.peaceScore.isBad()).size > 0){
       citizenForMessage.filter(c => c.peaceScore.isBad())
         .map( c => new Alert(peaceWatchers, c,dateTimeNow()) )
     }else {
-      val nWords = scala.util.Random.nextInt(10)
-      val wordsForMessage = scala.util.Random.shuffle(wordsDataset).take(nWords)
-      List(new Report(peaceWatchers, citizenForMessage, wordsForMessage,dateTimeNow()))
-    }
   }
+  */
 
 }
