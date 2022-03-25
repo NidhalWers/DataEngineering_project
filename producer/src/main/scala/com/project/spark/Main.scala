@@ -2,9 +2,7 @@ package com.project.spark
 
 import com.project.spark.infrastructure.{CitizenDataset, PeaceWatcherDataset}
 import com.project.spark.service.{MessageService, ProducerService}
-import org.apache.spark.sql.SparkSession
 import com.project.spark.model.{Message, PeaceWatcher, Report}
-import org.apache.spark.{SparkConf, SparkContext}
 
 object Main {
 
@@ -38,6 +36,5 @@ object Main {
 
     producerService.closeProducer()
     println("End program")
-    sc.stop()
   }
 }

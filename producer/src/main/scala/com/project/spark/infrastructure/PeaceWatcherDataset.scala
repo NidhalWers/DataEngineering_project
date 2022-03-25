@@ -1,7 +1,6 @@
 package com.project.spark.infrastructure
 
 import com.project.spark.model.{Coordinates, PeaceWatcher}
-import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.util.Random
 

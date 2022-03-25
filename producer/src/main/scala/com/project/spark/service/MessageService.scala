@@ -1,7 +1,6 @@
 package com.project.spark.service
 
 import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
-import org.apache.spark.rdd.RDD
 import java.time.LocalDateTime
 
 import com.google.gson.Gson

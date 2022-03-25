@@ -1,10 +1,12 @@
 package com.project.spark.service
+import java.time.Duration
 import java.util.Properties
 import java.util.concurrent.Future
 
-import org.apache.kafka.clients.consumer.KafkaConsumer
-import org.apache.kafka.clients.consumer.ConsumerConfig
+import scala.collection.JavaConverters._
+import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, ConsumerRecords, KafkaConsumer}
 import org.apache.kafka.common.serialization.StringDeserializer
+
 
 
 class ConsumerService {
@@ -17,8 +19,17 @@ class ConsumerService {
   props.put(ConsumerConfig.GROUP_ID_CONFIG, "message")
 
   val consumer : KafkaConsumer[String, String] = new KafkaConsumer[String,String](props)
+  consumer.subscribe(List("test_project").asJava)
 
-
+  def readMessage() : Unit /* List[String]*/ = {
+    val records : ConsumerRecords[String,String] = consumer.poll(Duration.ofMillis(100))
+    /*records.asScala.map(
+      record => record.value()
+    ).toList*/
+    records.asScala.foreach( record =>
+    println("key = "+record.key() + " value = "+record.value())
+    )
+  }
 
 
   def closeConsumer():Unit = {
