@@ -3,6 +3,8 @@ import java.time.Duration
 import java.util.Properties
 import java.util.concurrent.Future
 
+import com.project.spark.infrastructure.MessageRepository
+
 import scala.collection.JavaConverters._
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, ConsumerRecords, KafkaConsumer}
 import org.apache.kafka.common.serialization.StringDeserializer
@@ -22,6 +24,7 @@ class ConsumerService {
   consumer.subscribe(List("peace-project").asJava)
 
   val messageService = new MessageService
+  val messageRepository = new MessageRepository
 
   def readMessage() : Unit /* List[String]*/ = {
     val records : ConsumerRecords[String,String] = consumer.poll(Duration.ofMillis(100))
@@ -30,8 +33,7 @@ class ConsumerService {
     ).toList*/
     records.asScala
       .map( record => messageService.parseFromJson(record.value()) )
-    //todo code d'ajout dans la database
-
+      .foreach( message => messageRepository.insert(message) ) //todo coder l'insertion en base
   }
 
 
