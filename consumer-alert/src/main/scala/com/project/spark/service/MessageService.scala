@@ -1,7 +1,6 @@
 package com.project.spark.service
 
 import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
-import org.apache.spark.rdd.RDD
 import java.time.LocalDateTime
 
 import com.google.gson.Gson
@@ -37,14 +36,15 @@ class MessageService {
     gson.toJson(line)
   }
 
-  /*
-  def consumeMessage(): Unit ={
 
-    if( citizenForMessage.filter(c => c.peaceScore.isBad()).size > 0){
+  def consumeMessage(message : Report): Option[Alert] = {
+    if( message.citizens.filter(c => c.peaceScore.isBad()).size > 0){
       citizenForMessage.filter(c => c.peaceScore.isBad())
         .map( c => new Alert(peaceWatchers, c,dateTimeNow()) )
     }else {
+      None
+    }
   }
-  */
+
 
 }

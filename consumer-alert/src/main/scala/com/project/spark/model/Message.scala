@@ -1,10 +1,8 @@
 package com.project.spark.model
-import java.time.LocalDateTime
-import com.google.gson._
 
 sealed class Message
 
-class Report(
+case class Report(
               peaceWatcher: PeaceWatcher,
               citizens : List[Citizen],
               wordsHeard : List[String],
@@ -19,8 +17,10 @@ class Report(
     "time : " + time
   }
 
+
+
 }
-class Alert (
+case class Alert (
             peaceWatcher: PeaceWatcher,
             citizen : Citizen,
             time : String,

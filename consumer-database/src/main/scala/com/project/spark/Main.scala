@@ -2,9 +2,7 @@ package com.project.spark
 
 import com.project.spark.service.{ConsumerService, MessageService}
 import org.apache.spark.sql.SparkSession
-import com.project.spark.model.{Message, PeaceWatcher, Report}
 import org.apache.spark.api.java.JavaSparkContext.fromSparkContext
-import org.apache.spark.{SparkConf, SparkContext}
 
 object Main {
 
