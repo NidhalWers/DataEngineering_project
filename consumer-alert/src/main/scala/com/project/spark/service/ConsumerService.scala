@@ -21,14 +21,16 @@ class ConsumerService {
   val consumer : KafkaConsumer[String, String] = new KafkaConsumer[String,String](props)
   consumer.subscribe(List("test_project").asJava)
 
-  def readMessage() : Unit /* List[String]*/ = {
+  val messageService = new MessageService
+
+  def readMessage() : Unit = {
     val records : ConsumerRecords[String,String] = consumer.poll(Duration.ofMillis(100))
-    /*records.asScala.map(
-      record => record.value()
-    ).toList*/
-    records.asScala.foreach( record =>
-    println("key = "+record.key() + " value = "+record.value())
-    )
+    records.asScala.map( record =>
+    //println("key = "+record.key() + " value = "+record.value())
+      messageService.parseFromJson(record.value()))
+      .map(message => messageService.consumeMessage(message))
+      .map( alerts => alerts.foreach( a => println(a.toString))
+      )
   }
 
 

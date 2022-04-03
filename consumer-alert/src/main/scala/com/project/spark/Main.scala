@@ -33,9 +33,8 @@ object Main {
         makeAction(1)
         */
       consumerService.readMessage()
-      makeAction(1)
 
-      //todo envoyer dans la database
+      makeAction(1)
     }
 
     makeAction(1)
