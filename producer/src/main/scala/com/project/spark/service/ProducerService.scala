@@ -19,7 +19,7 @@ class ProducerService {
 
 
   def sendMessage(id : String, body : String) : Unit = {
-    val record = new ProducerRecord[String, String]("test_project",id, body)
+    val record = new ProducerRecord[String, String]("peace-project",id, body)
 
     producer.send(record)
     Thread.sleep(10000)

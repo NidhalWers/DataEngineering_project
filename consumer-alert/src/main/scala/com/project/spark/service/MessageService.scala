@@ -1,9 +1,14 @@
 package com.project.spark.service
 
+import java.io.StringWriter
+
 import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
 import java.time.LocalDateTime
 
+import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
 import com.google.gson.Gson
+import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 
 class MessageService {
@@ -28,23 +33,35 @@ class MessageService {
   }
 
   def parseFromJson(line:String):Report = {
-    val gson = new Gson
-    gson.fromJson(line, classOf[Message])
+    val mapper = new ObjectMapper with ScalaObjectMapper
+    mapper.registerModule(DefaultScalaModule)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+
+    mapper.readValue(line, classOf[Report])
   }
 
   def parseToJson(line:Message):String = {
     val gson = new Gson
-    gson.toJson(line)
+
+    val mapper = new ObjectMapper with ScalaObjectMapper
+    mapper.registerModule(DefaultScalaModule)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+
+    val out = new StringWriter
+    mapper.writeValue(out, line)
+    val json = out.toString
+    json
   }
 
 
-  def consumeMessage(message : Report): RDD[Alert] = {
+  def consumeMessage(message : Report): List[Alert] = {
     if( message.citizens.filter(c => c.peaceScore.isBad()).size > 0){
       message.citizens.filter(c => c.peaceScore.isBad())
         .map( c => Alert(message.peaceWatcher, c,dateTimeNow()) )
-    }else {
+    }else{
       List()
     }
+
   }
 
 

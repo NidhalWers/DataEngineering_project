@@ -19,7 +19,7 @@ class ConsumerService {
   props.put(ConsumerConfig.GROUP_ID_CONFIG, "message")
 
   val consumer : KafkaConsumer[String, String] = new KafkaConsumer[String,String](props)
-  consumer.subscribe(List("test_project").asJava)
+  consumer.subscribe(List("peace-project").asJava)
 
   def readMessage() : Unit /* List[String]*/ = {
     val records : ConsumerRecords[String,String] = consumer.poll(Duration.ofMillis(100))
@@ -27,7 +27,7 @@ class ConsumerService {
       record => record.value()
     ).toList*/
     records.asScala.foreach( record =>
-    println("key = "+record.key() + " value = "+record.value())
+    println(/*"key = "+record.key() + " value = "+*/record.value())
     )
   }
 

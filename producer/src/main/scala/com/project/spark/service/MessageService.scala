@@ -3,6 +3,10 @@ package com.project.spark.service
 import com.project.spark.model.{Alert, Citizen, Message, PeaceWatcher, Report}
 import java.time.LocalDateTime
 
+import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
+import java.io.StringWriter
+
 import com.google.gson.Gson
 
 class MessageService {
@@ -26,14 +30,25 @@ class MessageService {
     new Report(peaceWatchers, citizenForMessage, wordsForMessage, dateTimeNow())
   }
 
-  def parseFromJson(line:String):Message = {
-    val gson = new Gson
-    gson.fromJson(line, classOf[Message])
+  def parseFromJson(line:String):Report = {
+    val mapper = new ObjectMapper with ScalaObjectMapper
+    mapper.registerModule(DefaultScalaModule)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+
+    mapper.readValue(line, classOf[Report])
   }
 
   def parseToJson(line:Message):String = {
     val gson = new Gson
-    gson.toJson(line)
+
+    val mapper = new ObjectMapper with ScalaObjectMapper
+    mapper.registerModule(DefaultScalaModule)
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+
+    val out = new StringWriter
+    mapper.writeValue(out, line)
+    val json = out.toString
+    json
   }
 
   /*

@@ -16,6 +16,7 @@ object Main {
     val spark = SparkSession.builder().appName("Peaceland Project - Consumer-Alert")
       .master("local[*]")
       .getOrCreate()
+
     val sc = spark.sparkContext
 
 

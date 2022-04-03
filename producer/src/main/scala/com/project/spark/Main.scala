@@ -26,7 +26,7 @@ object Main {
       case 0 => println("End actions")
       case _ => action(acc)
         //.foreach(x => x._2.toString()+ "\n")
-        .map(x => (x._1.id, messageService.parseToJson(x._2)))
+        .map(x => (x._1.id, messageService.parseToJson(x._2)) )
         .foreach( x => producerService.sendMessage(x._1.toString, x._2) )
         Thread.sleep(3000)
         makeAction(acc-1)

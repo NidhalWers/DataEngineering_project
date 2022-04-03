@@ -29,7 +29,7 @@ case class Alert (
     "\t\t Alert ! Alert ! \n"+
     "peaceWatcher : " + peaceWatcher.id.toString + "\n" +
     "location : " + peaceWatcher.location.toString + "\n"+
-    "citizen " + citizen.name + " : score = " + citizen.peaceScore.value + "\n " +
+    "citizen : " + citizen.name + " : score = " + citizen.peaceScore.value + "\n " +
       "time : " + time
   }
 }
