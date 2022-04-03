@@ -1,10 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/producer/src/main/scala/com/project/spark/Main.scala:5:19: object spark is not a member of package org.apache[0m
-[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.SparkSession[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/producer/src/main/scala/com/project/spark/Main.scala:7:19: object spark is not a member of package org.apache[0m
-[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.{SparkConf, SparkContext}[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/producer/src/main/scala/com/project/spark/infrastructure/PeaceWatcherDataset.scala:4:19: object spark is not a member of package org.apache[0m
-[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.{SparkConf, SparkContext}[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were two deprecation warnings (since 2.12.1); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
