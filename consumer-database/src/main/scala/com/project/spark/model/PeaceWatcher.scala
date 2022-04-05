@@ -28,5 +28,6 @@ case class PeaceWatcher(
       PeaceWatcher(this.id, Coordinates(x, y), this.movements)
     }
   }
+
 }
 
