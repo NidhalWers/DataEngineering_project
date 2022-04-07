@@ -3,7 +3,9 @@ package com.project.spark.infrastructure
 import com.project.spark.model.{Message, Report}
 import org.apache.spark.sql.{SaveMode, SparkSession}
 import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.{FileSystem, Path}
+import org.apache.hadoop.fs.{FileSystem, FileUtil, Path}
+
+import java.io.File
 
 class MessageRepository {
 
@@ -17,8 +19,12 @@ class MessageRepository {
     import sparkSession.implicits._
     val df = data.toDF(columns:_*)
 
-    df.write.option("header",true).mode(SaveMode.Overwrite).csv("Storage/Messages.csv")
+    //val oldData =  getAllDate()
+    //val fin = df.union(oldData)
 
+
+    //df.write.option("header",true).mode(SaveMode.Overwrite).csv("Storage/Messages.csv")
+    df.write.option("header",true).mode(SaveMode.Append).csv("Storage/Messages.csv")
   }
 
   def select(query : String) : List[Message] = {
@@ -33,7 +39,7 @@ class MessageRepository {
 
   }
 
-  def getAllDate()={
+  def getAllDate(){
     val sparkSession = SparkSession.builder().appName("getAllData-db").getOrCreate()
     sparkSession.read.option("inferSchema", "true").csv("Storage/Messages.csv")
   }
