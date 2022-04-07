@@ -15,7 +15,7 @@ case class Citizen(
   }
 
   override def toString: String = {
-    name+","+peaceScore.value
+    name+":"+peaceScore.value
   }
 }
 
