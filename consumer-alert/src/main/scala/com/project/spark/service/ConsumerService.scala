@@ -17,7 +17,7 @@ class ConsumerService {
   props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092")
   props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer])
   props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, classOf[StringDeserializer])
-  props.put(ConsumerConfig.GROUP_ID_CONFIG, "message alert")
+  props.put(ConsumerConfig.GROUP_ID_CONFIG, "alert")
 
   val consumer : KafkaConsumer[String, String] = new KafkaConsumer[String,String](props)
   consumer.subscribe(List("peace-project").asJava)
