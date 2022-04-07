@@ -44,16 +44,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/service/MessageService$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/ConsumerService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/service/ConsumerService.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/ProducerService.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/service/ProducerService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/MessageService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/service/MessageService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/infrastructure[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure/CitizenDataset.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/infrastructure/CitizenDataset.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure/PeaceWatcherDataset.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/infrastructure/PeaceWatcherDataset.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure/MessageRepository.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/infrastructure/MessageRepository.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure/MessageRepository$$typecreator5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/infrastructure/MessageRepository$$typecreator5$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/Main.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/consumer-database/target/scala-2.12/classes/com/project/spark/Main.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
