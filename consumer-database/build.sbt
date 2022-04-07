@@ -13,6 +13,3 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8"
 
 
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "3.1.0"
-
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.0" % "provided"
-libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.0" % "provided"

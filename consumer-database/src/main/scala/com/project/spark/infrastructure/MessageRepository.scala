@@ -2,10 +2,7 @@ package com.project.spark.infrastructure
 
 import com.project.spark.model.{Message, Report}
 import org.apache.spark.sql.{SaveMode, SparkSession}
-import org.apache.hadoop.conf.Configuration
-import org.apache.hadoop.fs.{FileSystem, FileUtil, Path}
 
-import java.io.File
 
 class MessageRepository {
 
@@ -41,7 +38,7 @@ class MessageRepository {
 
   def getAllDate(){
     val sparkSession = SparkSession.builder().appName("getAllData-db").getOrCreate()
-    sparkSession.read.option("inferSchema", "true").csv("Storage/Messages.csv")
+    sparkSession.read.option("inferSchema", "true").option("header","true").csv("Storage/Messages.csv").show()
   }
 
 }

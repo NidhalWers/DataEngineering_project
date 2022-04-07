@@ -37,7 +37,7 @@ object Main {
     }
 
     //makeAction(1)
-    print(Repo.getAllDate())
+    Repo.getAllDate()
     //consumerService.closeConsumer()
     println("End program")
     sc.close()
