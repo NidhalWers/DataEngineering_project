@@ -7,7 +7,9 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
 class MessageRepository {
 
   def insert(message: Report) : Unit = {
-    val sparkSession = SparkSession.builder().appName("insert4-db").getOrCreate()
+    val sparkSession = SparkSession.builder().appName("Peaceland Project - Consumer-Database")
+      .master("local[*]")
+      .getOrCreate()
 
 
     val data=Seq((message.peaceWatcher.id.toString(),message.citizens.foldLeft(""){(acc, c) => acc+"|"+c.toString},message.wordsHeard.foldLeft(""){(acc, w) => acc+"|"+w.toString},message.time)

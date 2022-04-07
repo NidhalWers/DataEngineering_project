@@ -14,32 +14,14 @@ object Main {
 
   def main(args: Array[String]): Unit = {
     println("Peaceland Project - Consumer-Database")
-    val spark = SparkSession.builder().appName("Peaceland Project - Consumer-Database")
-      .master("local[*]")
-      .getOrCreate()
-    val sc = spark.sparkContext
-
-    def action() : Unit /*List[Message]*/ = {
-      /*val jsons = consumerService.readMessage()
-      jsons.map(json => messageService.parseFromJson(json))
-      */
-
-    }
 
     def makeAction(acc: Int): Unit = /*acc match*/ {
-      /*case 0 => println("End actions")
-      case _ => action()
-        .foreach(x => x.toString)
-        makeAction(1)
-        */
        consumerService.readMessage()
       makeAction(1)
     }
 
     makeAction(1)
-    //Repo.getAllDate()
     consumerService.closeConsumer()
     println("End program")
-    sc.close()
   }
 }

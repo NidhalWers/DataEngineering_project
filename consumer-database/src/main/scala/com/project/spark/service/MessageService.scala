@@ -2,8 +2,7 @@ package com.project.spark.service
 
 import java.io.StringWriter
 
-import com.project.spark.model.{Citizen, Message, PeaceWatcher, Report}
-import java.time.LocalDateTime
+import com.project.spark.model.{Message, Report}
 
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper}
 import com.fasterxml.jackson.module.scala.{DefaultScalaModule, ScalaObjectMapper}
@@ -32,15 +31,5 @@ class MessageService {
     val json = out.toString
     json
   }
-
-  /*
-  def consumeMessage(): Unit ={
-
-    if( citizenForMessage.filter(c => c.peaceScore.isBad()).size > 0){
-      citizenForMessage.filter(c => c.peaceScore.isBad())
-        .map( c => new Alert(peaceWatchers, c,dateTimeNow()) )
-    }else {
-  }
-  */
 
 }
