@@ -33,4 +33,9 @@ class MessageRepository {
 
   }
 
+  def getAllDate()={
+    val sparkSession = SparkSession.builder().appName("getAllData-db").getOrCreate()
+    sparkSession.read.option("inferSchema", "true").csv("Storage/Messages.csv")
+  }
+
 }
