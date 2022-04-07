@@ -13,5 +13,9 @@ case class Citizen(
       case 1 => Citizen(this.name, PeaceScore(this.peaceScore.value + change))
     }
   }
+
+  override def toString: String = {
+    name+","+peaceScore.value
+  }
 }
 

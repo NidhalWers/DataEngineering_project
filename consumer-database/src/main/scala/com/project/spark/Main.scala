@@ -36,9 +36,9 @@ object Main {
       makeAction(1)
     }
 
-    //makeAction(1)
-    Repo.getAllDate()
-    //consumerService.closeConsumer()
+    makeAction(1)
+    //Repo.getAllDate()
+    consumerService.closeConsumer()
     println("End program")
     sc.close()
   }

@@ -10,7 +10,7 @@ class MessageRepository {
     val sparkSession = SparkSession.builder().appName("insert4-db").getOrCreate()
 
 
-    val data=Seq((message.peaceWatcher.id.toString(),message.citizens.toString(),message.wordsHeard.toString(),message.time)
+    val data=Seq((message.peaceWatcher.id.toString(),message.citizens.foldLeft(""){(acc, c) => acc+"|"+c.toString},message.wordsHeard.foldLeft(""){(acc, w) => acc+"|"+w.toString},message.time)
     )
     val columns = Seq("peaceWatcher","citizens","wordsHeard","time")
     import sparkSession.implicits._
