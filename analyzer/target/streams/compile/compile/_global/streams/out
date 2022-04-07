@@ -1,4 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/src/main/scala/com/project/spark/service/AnalyzeService.scala:16:70: not found: value split[0m
-[0m[[0m[31merror[0m] [0m[0m    val reportConatingCitizensDF = reportDF.withColumn("listCitizen",split(col("data"),","))[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/src/main/scala/com/project/spark/infrastructure/MessageRepository.scala:3:26: object model is not a member of package com.project.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.project.spark.model.{Message, Report}[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/src/main/scala/com/project/spark/infrastructure/MessageRepository.scala:11:37: not found: type Message[0m
+[0m[[0m[31merror[0m] [0m[0m  def select(query : String) : List[Message] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

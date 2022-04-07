@@ -6,48 +6,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/PeaceScore.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/PeaceScore.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Citizen.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Citizen.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Report.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Report.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Report$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Report$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/PeaceWatcher$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/PeaceWatcher$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Message.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Message.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Coordinates.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Coordinates.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Alert.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Alert.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Coordinates$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Coordinates$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/PeaceScore$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/PeaceScore$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Alert$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Alert$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/PeaceWatcher.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/PeaceWatcher.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/model/Citizen$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/model/Citizen$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/Main$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/Main$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/MessageService$$anon$2.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service/MessageService$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/AnalyzeService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service/AnalyzeService.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/MessageService$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service/MessageService$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/ProducerService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service/ProducerService.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/service/MessageService.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/service/MessageService.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/target/scala-2.12/classes/com/project/spark/infrastructure[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/project/spark/infrastructure/CitizenDataset.class[0m
