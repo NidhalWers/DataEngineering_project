@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/src/main/scala/com/project/spark/Main.scala:3:8: object ConsumerService is not a member of package com.project.spark.service[0m
-[0m[[0m[31merror[0m] [0m[0mimport com.project.spark.service.{AnalyzeService, ConsumerService, MessageService}[0m
-[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/nidhal/Bureau/Dossier_Nidhal/Scolaire/Efrei/M1/S8/Data Enginerring/project/DataEngineering_project/analyzer/src/main/scala/com/project/spark/service/AnalyzeService.scala:16:70: not found: value split[0m
+[0m[[0m[31merror[0m] [0m[0m    val reportConatingCitizensDF = reportDF.withColumn("listCitizen",split(col("data"),","))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                     ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m

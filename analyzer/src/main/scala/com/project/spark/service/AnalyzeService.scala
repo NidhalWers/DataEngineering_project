@@ -1,7 +1,7 @@
 package com.project.spark.service
 
 import com.project.spark.infrastructure.MessageRepository
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SparkSession, functions}
 import org.apache.spark.sql.functions.{col, count, countDistinct, desc}
 
 class AnalyzeService {
@@ -13,28 +13,24 @@ class AnalyzeService {
     val reportDF = messageRepository.getAllDate(sc);
     reportDF.show()
 
-    val reportConatingCitizensDF = reportDF.withColumn("listCitizen",split(col("data"),","))
-    val citizensDF = reportConatingCitizensDF.select(col("peaceWatcherId"),col("listCitizen"))
-    val citizens = citizensDF.select(col("peaceWatcherId"),explode(col("listCitizen")))
-    val citizensAndScores = citizens.withColumn("peaceScore",col("col").substr(-2,2)).withColumnRenamed("col","citizenData")
-    val finalcitizendf = citizensAndScores.withColumn("citizenName",expr("substring(citizenData, 1, length(citizenData)-3)"))
-    val finalcitizendfv2= finalcitizendf.withColumn("peaceScore", regexp_replace(col("peaceScore"), ":", "")).withColumn("peaceScore",col("peaceScore").cast("integer"))
-
-    val days = reportDF.withColumn("day",col("time").substr(1,2))
-    days.show()
-    finalcitizendfv2.show()
+    val hours = reportDF.withColumn("hours",col("time").substr(10,2))
+    val numberOfWords = reportDF.withColumn("nb_words", functions.size(functions.split(col("wordsHeard"),"|")))
+    hours.show()
+    numberOfWords.show()
 
     println("\n--------------------------STARTING ANALYSIS----------------------- \n")
-    reportDF.select(countDistinct("peaceWatcherId").alias("How much distinct peaceWatchers are there in service?")).show()
+    reportDF.select(countDistinct("peaceWatcher").alias("How much distinct peaceWatchers are there in service?")).show()
 
-    println("\n ---------- Which days has most reports ? ------------------ \n")
-    days.groupBy(col("day")).agg(count("day").as("NbOfReports")).orderBy(desc("NbOfReports")).show(1)
+    println("\n ---------- Which hours has most reports ? ------------------ \n")
+    hours.groupBy(col("hours")).agg(count("hours").as("NbOfReports")).orderBy(desc("NbOfReports")).show(1)
 
-    println("\n ---------- Worst citizens ? ------------------ \n")
-    finalcitizendfv2.orderBy(col("peaceScore")).show(5)
+    println("\n ---------- Message with less words ? ------------------ \n")
+    numberOfWords.orderBy(col("nb_words")).show(5)
 
-    println("\n ---------- Best citizens ? ------------------ \n")
-    finalcitizendfv2.orderBy(desc("peaceScore")).show(5)
+    println("\n ---------- Message with most words ? ------------------ \n")
+    numberOfWords.orderBy(desc("nb_words")).show(5)
+
+
 
   }
 

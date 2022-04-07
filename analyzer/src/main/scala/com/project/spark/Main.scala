@@ -19,7 +19,7 @@ object Main {
     val sc = spark.sparkContext
 
 
-    analyzeService.analyze(sc);
+    analyzeService.analyze(spark);
 
     println("End program")
     sc.close()
